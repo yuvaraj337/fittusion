@@ -34,7 +34,7 @@ export default function HeroHeading({ scrollYProgress }: { scrollYProgress?: Mot
           Sculpt <span className="text-[#C7F000] md:text-[#C7F000]/30">Your</span> Body.
         </span>
         <span className="block text-[clamp(40px,11vw,58px)] md:text-[clamp(56px,5.8vw,100px)] text-[#F3F6D8] md:ml-[1.5em]">
-          Elevate <span className="text-[#C7F000] md:text-[#C7F000]/30">Your</span> Spirit
+          Elevate <span className="text-[#C7F000] md:text-[#C7F000]/30">Your</span> Spirit.
         </span>
         <p className="mt-4 max-w-[340px] text-[14px] leading-[1.35] font-inter font-medium tracking-wide text-[#D7DAC8] md:hidden">
           Train smarter. Get stronger. Live better.
