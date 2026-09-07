@@ -28,18 +28,18 @@ export function FloatingStatCard({ icon, label, value, className = '', delay = 0
   return (
     <motion.div
       className="absolute inset-0 pointer-events-none"
-      style={reducedMotion || !scrollYProgress ? {} : { y: scrollY }}
+      style={reducedMotion || !scrollYProgress ? {} : { y: isMobile ? 0 : scrollY }}
     >
       <motion.div
         className={`stat-card ${className} transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 hover:shadow-[0_25px_55px_rgba(0,0,0,0.35)] pointer-events-auto`}
         initial={{ opacity: 0, y: 25, scale: 0.94 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay }}
-        style={{ ...(reducedMotion ? {} : { x: parallaxX, y: parallaxY }) }}
+        style={{ ...(reducedMotion || isMobile ? {} : { x: parallaxX, y: parallaxY }) }}
       >
         <motion.div
           className="stat-card-inner w-full h-full flex flex-col items-center justify-center pointer-events-none"
-          animate={reducedMotion ? {} : { y: floatY }}
+          animate={reducedMotion || isMobile ? {} : { y: floatY }}
           transition={{ duration: floatDuration, repeat: Infinity, ease: "easeInOut" }}
         >
           <div className="stat-icon text-[#C7F000] mb-1 md:mb-2 scale-[0.65] md:scale-100">
