@@ -75,12 +75,17 @@
 
 /* Mobile-only hero composition. Desktop styles above remain unchanged. */
 @media (max-width: 767px) {
+  /* ─── HERO SECTION — disable sticky scroll-reveal on mobile ─── */
+  section:has(.hero-sticky) {
+    height: auto !important;
+  }
+
   /* ─── HERO CONTAINER ─── */
   .hero-sticky {
+    position: relative !important;
     min-height: 100svh;
     height: auto !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+    overflow: visible !important;
   }
 
   /* ─── HERO MAIN — switch from absolute stacking to vertical flow ─── */
