@@ -11,7 +11,7 @@ export default function SocialProof({ scrollYProgress }: { scrollYProgress?: Mot
   return (
     <motion.div
       className="absolute inset-0 pointer-events-none"
-      style={reducedMotion || !scrollYProgress ? {} : { y: scrollY, opacity: scrollOpacity }}
+      style={reducedMotion || !scrollYProgress ? {} : { y: isMobile ? 0 : scrollY, opacity: isMobile ? 1 : scrollOpacity }}
     >
       <motion.div
         className="absolute left-6 bottom-[82px] md:left-[48px] md:bottom-[38px] flex flex-col gap-1.5 md:gap-2 z-40 scale-[0.8] md:scale-100 origin-bottom-left pointer-events-auto hero-social-proof"

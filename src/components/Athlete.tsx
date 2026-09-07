@@ -14,16 +14,16 @@ export default function Athlete({ scrollYProgress }: { scrollYProgress?: MotionV
   return (
     <motion.div
       className="absolute inset-0 flex items-end justify-center pointer-events-none z-20 overflow-hidden md:overflow-visible"
-      style={reducedMotion || !scrollYProgress ? {} : { y: scrollY }}
+      style={reducedMotion || !scrollYProgress ? {} : { y: isMobile ? 0 : scrollY }}
     >
       <motion.div
         className="absolute bottom-[108px] md:bottom-0 left-1/2 w-[92vw] md:w-auto h-[42vh] sm:h-[46vh] md:h-[88vh] max-h-[920px] flex justify-center items-end hero-athlete"
-        initial={{ opacity: 0, x: "-50%", y: 40, scale: 0.96 }}
-        animate={{ opacity: 1, x: "-50%", y: 0, scale: 1 }}
+        initial={{ opacity: 0, x: isMobile ? 0 : "-50%", y: isMobile ? 20 : 40, scale: 0.96 }}
+        animate={{ opacity: 1, x: isMobile ? 0 : "-50%", y: 0, scale: 1 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
         style={{
-          x: reducedMotion ? "-50%" : combinedX,
-          y: reducedMotion ? 0 : parallaxY
+          x: isMobile ? 0 : (reducedMotion ? "-50%" : combinedX),
+          y: isMobile ? 0 : (reducedMotion ? 0 : parallaxY)
         }}
       >
         <motion.div
@@ -41,3 +41,4 @@ export default function Athlete({ scrollYProgress }: { scrollYProgress?: MotionV
     </motion.div>
   );
 }
+

@@ -165,7 +165,7 @@
 
   /* Each FloatingStatCard wraps in an `absolute inset-0` motion.div —
      on mobile, make those wrappers relative so they join the grid. */
-  .hero-stats-grid > div > div {
+  .hero-stats-grid > div {
     position: relative !important;
     inset: unset !important;
     width: 100% !important;

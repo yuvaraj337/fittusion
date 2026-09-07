@@ -12,7 +12,7 @@ export default function HeroCTA({ scrollYProgress }: { scrollYProgress?: MotionV
   return (
     <motion.div
       className="absolute inset-0 pointer-events-none"
-      style={reducedMotion || !scrollYProgress ? {} : { y: scrollY, opacity: scrollOpacity }}
+      style={reducedMotion || !scrollYProgress ? {} : { y: isMobile ? 0 : scrollY, opacity: isMobile ? 1 : scrollOpacity }}
     >
       <motion.div
         className="absolute left-6 right-6 bottom-4 md:left-auto md:right-[48px] md:bottom-[38px] z-40 scale-[0.9] md:scale-100 origin-bottom-right pointer-events-auto hero-cta"

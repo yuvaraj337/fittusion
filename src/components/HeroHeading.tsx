@@ -15,14 +15,14 @@ export default function HeroHeading({ scrollYProgress }: { scrollYProgress?: Mot
   return (
     <motion.div
       className="absolute inset-x-0 top-0 md:inset-0 flex items-start pt-[108px] md:pt-[140px] justify-center pointer-events-none z-10 px-4 hero-heading"
-      style={reducedMotion || !scrollYProgress ? {} : { y: scrollY, opacity: scrollOpacity }}
+      style={reducedMotion || !scrollYProgress ? {} : { y: isMobile ? 0 : scrollY, opacity: isMobile ? 1 : scrollOpacity }}
     >
       <motion.h1
         className="font-syne font-bold text-center leading-[0.92] tracking-[-0.045em] md:tracking-[-0.05em] flex flex-col items-center max-w-[95vw] md:max-w-[1180px] mx-auto w-full"
         initial={{ opacity: 0, y: 35 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
-        style={reducedMotion ? {} : { x: parallaxX, y: parallaxY }}
+        style={reducedMotion || isMobile ? {} : { x: parallaxX, y: parallaxY }}
       >
         <span className="hidden md:block mb-5 text-[10px] font-medium tracking-[0.45em] uppercase text-[#858878]">
           Fitness for a better you
